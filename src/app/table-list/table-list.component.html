@@ -1,0 +1,202 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> TestController3</h4>
+          <a class="btn btn-primary pull-right" style="margin-right:27px" 
+                    [routerLink]="['/table-list/testcontroller3/add']"> 
+                        <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  VMID
+                </th>
+                <th>
+                  Browser
+                </th>
+                <th>
+                  Exec
+                </th>
+                <th class="text-right">
+                  Actions
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let tc of testControllers3">
+                  <td>
+                    {{tc.vmid}}
+                  </td>
+                  <td>
+                    {{tc.browser}}
+                  </td>
+                  <td>
+                    {{tc.exec}}
+                  </td>
+                  <td class="text-right">
+                    <a class="btn btn-primary" style="margin-right:5px" 
+                    [routerLink]="['/table-list/testcontroller3/edit',tc.id]"> 
+                        <i class="now-ui-icons design-2_ruler-pencil"></i> Edit</a>
+                    <a class="btn btn-primary" 
+                       (click)="deleteController3(tc.id)">
+                      <i class="now-ui-icons ui-1_simple-remove"></i> Delete</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> TestController1</h4>
+          <a class="btn btn-primary pull-right" style="margin-right:27px" 
+          [routerLink]="['/table-list/testcontroller1/add']"> 
+              <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  slno
+                </th>
+                <th style="width: 3%;">
+                  moduleid
+                </th>
+                <th>
+                  moduleSeqid
+                </th>
+                <th>
+                  machineid
+                </th>
+                <th>
+                  machinesequenceid
+                </th>
+                <th>
+                  execute
+                </th>
+                <th class="text-right">
+                   Actions
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let tc1 of testControllers1">
+                  <td>
+                    {{tc1.id}}
+                  </td>
+                  <td>
+                    {{tc1.moduleID}}
+                  </td>
+                  <td>
+                    {{tc1.moduleSeqID}}
+                  </td>
+                  <td>
+                    {{tc1.machineID}}
+                  </td>
+                  <td>
+                    {{tc1.machineSequenceID}}
+                  </td>
+                  <td>
+                    {{tc1.execute}}
+                  </td>
+                  <td class="text-right">
+                      <a class="btn btn-primary" style="margin-right:5px" 
+                      [routerLink]="['/table-list/testcontroller1/edit',tc1.id]"> 
+                          <i class="now-ui-icons design-2_ruler-pencil"></i> Edit</a>
+                      <a class="btn btn-primary" (click)="deleteController1(tc1.id)">
+                        <i class="now-ui-icons ui-1_simple-remove"></i> Delete</a>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"> TestController2</h4>
+            <a class="btn btn-primary pull-right" style="margin-right:27px" 
+            [routerLink]="['/table-list/testcontroller2/add']"> 
+                <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive table-bordered" style="height: 700px;">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    sno
+                  </th>
+                  <th>
+                      testscriptname
+                  </th>
+                  <th>
+                      testscriptdescription
+                  </th>
+                  <th>
+                      testcaseid
+                    </th>
+                  <th>
+                    featureid
+                  </th>
+                  <th>
+                      testtype
+                  </th>
+                  <th>
+                      jira_id
+                  </th>
+                  
+                  <th class="text-right">
+                     Actions
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let tc2 of testControllers2">
+                    <td>
+                      {{tc2.id}}
+                    </td>
+                    <td>
+                        <div style="word-wrap: break-word;width: 100px;"> {{tc2.testScriptName}}</div>
+                      </td>   
+                      <td>
+                          <div style="word-wrap: break-word;width: 100px;"> {{tc2.testScriptDescription}}</div>
+                        </td>  
+                        <td style="width: 3%;">
+                            <div style="word-wrap: break-word;width: 100px;">{{tc2.testCaseID}}</div>
+                          </td>
+                    <td>
+                        <div style="word-wrap: break-word;width: 100px;"> {{tc2.featureID}}</div>
+                    </td>
+                    <td>
+                        <div style="word-wrap: break-word;width: 100px;"> {{tc2.testType}}</div>
+                    </td>
+                    <td>
+                        <div style="word-wrap: break-word;width: 100px;"> {{tc2.jira_ID}}</div>
+                    </td>
+                          
+                    <td class="text-right">
+                        <a class="btn btn-primary" style="margin-bottom: 5px;" 
+                        [routerLink]="['/table-list/testcontroller2/edit',tc2.id]"> 
+                            <i class="now-ui-icons design-2_ruler-pencil"></i> Edit</a>
+                        <a class="btn btn-primary" (click)="deleteController2(tc2.id)">
+                          <i class="now-ui-icons ui-1_simple-remove"></i> Delete</a>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</div>

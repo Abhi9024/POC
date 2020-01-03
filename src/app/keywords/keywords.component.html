@@ -1,0 +1,68 @@
+<div class="panel-header panel-header-sm">
+    </div>
+    <div class="main-content">
+       <div class="row">
+         <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title"> Keywords</h4>
+                  <a class="btn btn-primary pull-right" style="margin-right:27px" 
+                  [routerLink]="['/keywords/add']"> 
+                      <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive" style="height:700px;">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Function Name
+                        </th>
+                        <th>
+                          Step Description
+                        </th>
+                        <th>
+                          Action Or Keyword
+                        </th>
+                        <th>
+                            Object LogicalName
+                        </th>
+                        <th>
+                            Execute
+                        </th>
+                        <th class="text-right">
+                           Actions
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let k of keywords">
+                          <td>
+                              <div style="word-wrap: break-word;width: 80px;">{{k.functionName}}</div>
+                          </td>
+                          <td>
+                              <div style="word-wrap: break-word;width: 80px;">{{k.stepDescription}}</div>
+                          </td>
+                          <td>
+                              <div style="word-wrap: break-word;width: 100px;">{{k.actionOrKeyword}}</div>
+                          </td>
+                          <td>
+                            <div style="word-wrap: break-word;width: 100px;">{{k.objectLogicalName}}</div>
+                          </td>
+                          <td>
+                            <div style="word-wrap: break-word;width: 100px;">{{k.execute}}</div>
+                          </td>
+                          <td class="text-right">
+                              <a class="btn btn-primary" style="margin-right:5px" 
+                              [routerLink]="['/keywords/edit',k.id]"> 
+                                  <i class="now-ui-icons design-2_ruler-pencil"></i> Edit</a>
+                              <a class="btn btn-primary" (click)="deleteKeyword(k.id)">
+                                <i class="now-ui-icons ui-1_simple-remove"></i> Delete</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+         </div>
+        </div>
+    </div>

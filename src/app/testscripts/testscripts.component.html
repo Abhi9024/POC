@@ -1,0 +1,62 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+   <div class="row">
+     <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title"> TestScripts</h4>
+              <a class="btn btn-primary pull-right" style="margin-right:27px" 
+              [routerLink]="['/testscripts/add']"> 
+                  <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive" style="height:700px;">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th style="width: 20px;">
+                      FunctionDescription
+                    </th>
+                    <th>
+                      FunctionName
+                    </th>
+                    <th>
+                      Execute
+                    </th>
+                    <th>
+                        TestCaseID
+                    </th>
+                    <th class="text-right">
+                       Actions
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ts of testscripts">
+                      <td>
+                        <div style="word-wrap: break-word;width: 100px;">{{ts.functionDescription}}</div>
+                      </td>
+                      <td>
+                          <div style="word-wrap: break-word;width: 80px;">{{ts.functionName}}</div>
+                      </td>
+                      <td>
+                          <div style="word-wrap: break-word;width: 80px;">{{ts.execute}}</div>
+                      </td>
+                      <td>
+                          <div style="word-wrap: break-word;width: 100px;">{{ts.testCaseID}}</div>
+                      </td>
+                      <td class="text-right">
+                          <a class="btn btn-primary" style="margin-right:5px" 
+                          [routerLink]="['/testscripts/edit',ts.id]"> 
+                              <i class="now-ui-icons design-2_ruler-pencil"></i> Edit</a>
+                          <a class="btn btn-primary" (click)="deleteScript(ts.id)">
+                            <i class="now-ui-icons ui-1_simple-remove"></i> Delete</a>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+     </div>
+    </div>
+</div>
