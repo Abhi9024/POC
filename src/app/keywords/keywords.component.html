@@ -11,7 +11,7 @@
                       <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive" style="height:700px;">
+                  <!-- <div class="table-responsive" style="height:700px;">
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
@@ -60,7 +60,49 @@
                         </tr>
                       </tbody>
                     </table>
-                  </div>
+                  </div> -->
+                  <p-table #ky [value]="keywords" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                                {{col.header}}
+                                <p-sortIcon [field]="col.field"></p-sortIcon>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                                <input *ngSwitchCase="'functionName'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'stepDescription'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'actionOrKeyword'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'objectLogicalName'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'execute'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'param1'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'param2'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'param3'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'param4'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                                <input *ngSwitchCase="'featureName'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-ts>
+                        <tr>
+                            <td>{{ts.functionName}}</td>
+                            <td>{{ts.stepDescription}}</td>
+                            <td>{{ts.actionOrKeyword}}</td>
+                            <td>{{ts.objectLogicalName}}</td>
+                            <td>{{ts.execute}}</td>
+                            <td>{{ts.param1}}</td>
+                            <td>{{ts.param2}}</td>
+                            <td>{{ts.param3}}</td>
+                            <td>{{ts.param4}}</td>
+                            <td>{{ts.featureName}}</td>
+                            <td style="text-align:center">
+                             <button pButton type="button" style="background-color: #f96332 !important;margin-bottom: 5px;" icon="pi pi-pencil" class="ui-button-success ui-button-raised" (click)="onRowEditInit(ts.id)"></button>
+                             <button pButton type="button" icon="pi pi-times" class="ui-button-danger" (click)="deleteKeyword(ts.id)"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
                 </div>
               </div>
          </div>

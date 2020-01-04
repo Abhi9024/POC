@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TestScript } from '../models/testscript.model';
 import { TestScriptsService } from '../services/testscripts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-testscripts',
@@ -11,10 +12,25 @@ import { TestScriptsService } from '../services/testscripts.service';
 export class TestscriptsComponent implements OnInit {
 
   testscripts: TestScript[];
-  constructor(private service: TestScriptsService) { }
+  cols:any[];
+  constructor(private service: TestScriptsService,private router:Router) { }
 
   ngOnInit() {
     this.getTestScripts();
+    this.cols=[
+        { field: 'testCaseID', header: 'Test CaseID' },
+        { field: 'tc_stepID', header: 'TC_StepID' },
+        { field: 'testScriptName', header: 'TestScript Name' },
+        { field: 'functionDescription', header: 'Function Description' },
+        { field: 'functionName', header: 'Function Name' },
+        { field: 'execute', header: 'Execute' },
+        { field: 'param1', header: 'Param1' },
+        { field: 'param2', header: 'Param2' },
+        { field: 'param3', header: 'Param3' },
+        { field: 'param4', header: 'Param4' },
+        { field: 'featureName', header: 'Feature Name' },
+        { field: 'actions', header: 'Actions' }
+    ];
   }
 
   getTestScripts(){
@@ -39,6 +55,10 @@ export class TestscriptsComponent implements OnInit {
          this.getTestScripts();
        },2200)
     }
+  }
+
+  onRowEditInit(id:number){
+    this.router.navigate(['/testscripts/edit', id]);
   }
 
 }

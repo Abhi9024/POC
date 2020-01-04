@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Repository } from '../models/repository.model';
 import { RepositoryService } from '../services/repository.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-repository',
@@ -10,9 +11,19 @@ import { RepositoryService } from '../services/repository.service';
 })
 export class RepositoryComponent implements OnInit {
   repositories: Repository[];
-  constructor(private service: RepositoryService) { }
+  cols:any[];
+  constructor(private service: RepositoryService,private router:Router) { }
   ngOnInit() {
     this.getRepositories();
+    this.cols=[
+      { field: 'logicalName', header: 'Logical Name' },
+      { field: 'findMethod', header: 'Find Method' },
+      { field: 'xpathQuery_PropertyName', header: 'XPathQuery' },
+      { field: 'propertyValue', header: 'Property Value' },
+      { field: 'tagName', header: 'Tag Name' },
+      { field: 'featureName', header: 'Feature Name' },
+      { field: 'actions', header: 'Actions' }
+  ];
   }
 
   getRepositories(){
@@ -36,6 +47,10 @@ export class RepositoryComponent implements OnInit {
          this.getRepositories();
        },2200)
     }
+  }
+
+  onRowEditInit(id:number){
+    this.router.navigate(['/repository/edit', id]);
   }
 
 }

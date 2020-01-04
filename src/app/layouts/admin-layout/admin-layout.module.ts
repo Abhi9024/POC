@@ -29,6 +29,17 @@ import { RepositoryAddComponent } from '../../repository/repository-add/reposito
 import { KeywordsComponent } from '../../keywords/keywords.component';
 import { KeywordsEditComponent } from '../../keywords/keywords-edit/keywords-edit.component';
 import { KeywordsAddComponent } from '../../keywords/keywords-add/keywords-add.component';
+import { TableModule } from 'primeng/table';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { TabViewModule } from 'primeng/tabview';
+import { CodeHighlighterModule } from 'primeng/codehighlighter';
 
 
 @NgModule({
@@ -39,7 +50,18 @@ import { KeywordsAddComponent } from '../../keywords/keywords-add/keywords-add.c
     ReactiveFormsModule,
     ChartsModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    TableModule,
+    SliderModule,
+		DialogModule,
+		MultiSelectModule,
+		ContextMenuModule,
+		DropdownModule,
+		ButtonModule,
+		ToastModule,
+		InputTextModule,
+		TabViewModule,
+		CodeHighlighterModule
   ],
   declarations: [
     DashboardComponent,
