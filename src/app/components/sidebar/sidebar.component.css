@@ -1,0 +1,11 @@
+
+.logo {
+    cursor: pointer;
+    
+}
+.button{
+   display: inline-block; 
+   position: fixed;
+   left: 0;
+   background-color: #5e6061;
+}
