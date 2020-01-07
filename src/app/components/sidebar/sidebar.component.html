@@ -1,14 +1,12 @@
 <div class="logo">
     <a class="simple-text logo-mini" (click)="showItems = !showItems">
-        <div class="logo-img">
-            <img src="./assets/img/angular2-logo-white.png" />
-        </div>
+        <i class="pi pi-bars icon"></i>
     </a>
     <a class="simple-text logo-normal">
         Automation API
     </a>
 </div>
-<div *ngIf="showItems" class="sidebar-wrapper" >
+<div *ngIf="showItems" class="sidebar-wrapper">
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a [routerLink]="[menuItem.path]">

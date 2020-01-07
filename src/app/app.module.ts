@@ -16,6 +16,8 @@ import { TestControllerService } from './services/testcontroller.service';
 import { TestScriptsService } from './services/testscripts.service';
 import { KeywordService } from './services/keyword.service';
 import { RepositoryService } from './services/repository.service';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog/confirmation-dialog.component';
+
 
 
 @NgModule({
@@ -31,9 +33,11 @@ import { RepositoryService } from './services/repository.service';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    ConfirmationDialogComponent
   ],
   providers: [TestControllerService,TestScriptsService,KeywordService,RepositoryService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmationDialogComponent]
 })
 export class AppModule { }

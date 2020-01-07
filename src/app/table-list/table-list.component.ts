@@ -4,13 +4,14 @@ import { TestControllerService } from '../services/testcontroller.service';
 import { TestController2 } from '../models/testcontrolller2.model';
 import { TestController1 } from '../models/testcontroller1.model';
 import { Router } from '@angular/router';
+import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog/confirmation-dialog.service';
 
 
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
   styleUrls: ['./table-list.component.css'],
-  providers:[TestControllerService]
+  providers:[TestControllerService,ConfirmationDialogService]
 })
 export class TableListComponent implements OnInit {
 
@@ -20,7 +21,8 @@ export class TableListComponent implements OnInit {
   controller3Cols:any[];
   controller2Cols:any[];
   controller1Cols:any[];
-  constructor(private svc: TestControllerService,private router: Router) { }
+  constructor(private svc: TestControllerService,private router: Router,
+    private confirmationDialogService: ConfirmationDialogService) { }
 
   ngOnInit() {
     this.getControllers();
@@ -118,7 +120,7 @@ export class TableListComponent implements OnInit {
   }
 
   deleteController3(id:number){
-    if(confirm("Are you sure to delete?")) {
+    if(this.confirmationDialogService.confirm('Are you sure you want to delete?')) {
       this.svc.deleteTestController3(id);
        setTimeout(f=>{
          this.getControllers();

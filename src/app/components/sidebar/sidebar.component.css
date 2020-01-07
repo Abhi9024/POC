@@ -3,9 +3,8 @@
     cursor: pointer;
     
 }
-.button{
-   display: inline-block; 
-   position: fixed;
-   left: 0;
-   background-color: #5e6061;
+.icon{
+   position: relative;
+   color: aliceblue; 
+   font-size: 2.0em;
 }
