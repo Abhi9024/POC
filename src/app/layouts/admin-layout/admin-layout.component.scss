@@ -19,3 +19,15 @@
 .sidebar .nav li.active > a{
     color: black;
 }
+
+.panel-header {
+    background: whitesmoke !important;
+}
+
+.navbar a:not(.btn):not(.dropdown-item){
+    color: #007bff !important;
+}
+
+.input-group-text{
+    color: #007bff !important;
+}
