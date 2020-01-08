@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TestController3 } from '../models/testcontroller3.model';
 import { TestControllerService } from '../services/testcontroller.service';
 import { TestController2 } from '../models/testcontrolller2.model';
@@ -11,7 +11,8 @@ import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-d
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
   styleUrls: ['./table-list.component.css'],
-  providers:[TestControllerService,ConfirmationDialogService]
+  providers:[TestControllerService,ConfirmationDialogService],
+  encapsulation:ViewEncapsulation.None
 })
 export class TableListComponent implements OnInit {
 

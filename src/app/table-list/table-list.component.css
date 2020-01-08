@@ -1,0 +1,32 @@
+.panel-header{
+    background: grey;
+    padding-top: 20px;
+}
+.panel-header-sm {
+    height: 65px;
+  }
+
+  .main-panel .main-content{
+      margin-top: 0px;
+  }
+
+  .btn-primary {
+    background-color: #100699;
+    color: #FFFFFF;
+  }
+  
+  .ui-table .ui-table-thead > tr > th {
+    border: 1px solid #c8c8c8;
+    font-weight: 600 !important;
+    font-size: x-small;
+    color:#e1eaf2;
+    background-color: #f4f4f4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ui-widget{
+      font-size: 9px !important;
+  }
+ 

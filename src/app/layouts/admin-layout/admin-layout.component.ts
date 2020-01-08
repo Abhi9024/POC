@@ -1,5 +1,5 @@
 import {filter} from 'rxjs/operators';
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 
 import { NavbarComponent } from '../../components/navbar/navbar.component';
@@ -10,13 +10,14 @@ import PerfectScrollbar from 'perfect-scrollbar';
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
-  styleUrls: ['./admin-layout.component.scss']
+  styleUrls: ['./admin-layout.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class AdminLayoutComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
-
+  showItems = false;
   constructor( public location: Location, private router: Router) {}
 
   ngOnInit() {

@@ -1,21 +1,18 @@
 <div class="panel-header panel-header-sm">
 </div>
-<div class="main-content">
-   <div class="row">
+<!-- <div class="main-content">
+   <div class="row"> -->
      <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title"> TestScripts</h4>
-              <a class="btn btn-primary pull-right" style="margin-right:27px" 
-              [routerLink]="['/testscripts/add']"> 
-                  <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
-            </div>
+          <!-- <div class="card">
+            <div class="card-header"> -->
+              <h5>TestScripts</h5>
+            <!-- </div>
             <br>
-            <div class="card-body">
+            <div class="card-body"> -->
               <p-table #ts [value]="testscripts" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
                 <ng-template pTemplate="header" let-columns>
                     <tr>
-                        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
                             {{col.header}}
                             <p-sortIcon [field]="col.field"></p-sortIcon>
                         </th>
@@ -56,8 +53,11 @@
                     </tr>
                 </ng-template>
             </p-table>
-            </div>
+            <button class="btn btn-primary pull-right" style="margin-right:27px; font-size: 0.5rem;" 
+            [routerLink]="['/testscripts/add']"> 
+                <i class="now-ui-icons ui-1_simple-add"></i> Add</button>
+            <!-- </div>
           </div>
      </div>
-    </div>
+    </div> -->
 </div>
