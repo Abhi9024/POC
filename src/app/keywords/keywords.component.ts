@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Keywords } from '../models/keyword.model';
 import { KeywordService } from '../services/keyword.service';
 import { Router } from '@angular/router';
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-keywords',
   templateUrl: './keywords.component.html',
-  styleUrls: ['./keywords.component.scss']
+  styleUrls: ['./keywords.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class KeywordsComponent implements OnInit {
 

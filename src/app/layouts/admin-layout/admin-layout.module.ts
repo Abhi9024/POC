@@ -40,7 +40,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
 import { CodeHighlighterModule } from 'primeng/codehighlighter';
-
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   imports: [
@@ -61,7 +61,8 @@ import { CodeHighlighterModule } from 'primeng/codehighlighter';
 		ToastModule,
 		InputTextModule,
 		TabViewModule,
-		CodeHighlighterModule
+    CodeHighlighterModule,
+    TooltipModule
   ],
   declarations: [
     DashboardComponent,

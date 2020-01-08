@@ -1,70 +1,18 @@
 <div class="panel-header panel-header-sm">
     </div>
-    <div class="main-content">
-       <div class="row">
+    <!-- <div class="main-content"> -->
+       <!-- <div class="row"> -->
          <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title"> Keywords</h4>
-                  <a class="btn btn-primary pull-right" style="margin-right:27px" 
-                  [routerLink]="['/keywords/add']"> 
-                      <i class="now-ui-icons ui-1_simple-add"></i> Add</a>
-                </div>
-                <div class="card-body">
-                  <!-- <div class="table-responsive" style="height:700px;">
-                    <table class="table">
-                      <thead class=" text-primary">
-                        <th>
-                          Function Name
-                        </th>
-                        <th>
-                          Step Description
-                        </th>
-                        <th>
-                          Action Or Keyword
-                        </th>
-                        <th>
-                            Object LogicalName
-                        </th>
-                        <th>
-                            Execute
-                        </th>
-                        <th class="text-right">
-                           Actions
-                        </th>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let k of keywords">
-                          <td>
-                              <div style="word-wrap: break-word;width: 80px;">{{k.functionName}}</div>
-                          </td>
-                          <td>
-                              <div style="word-wrap: break-word;width: 80px;">{{k.stepDescription}}</div>
-                          </td>
-                          <td>
-                              <div style="word-wrap: break-word;width: 100px;">{{k.actionOrKeyword}}</div>
-                          </td>
-                          <td>
-                            <div style="word-wrap: break-word;width: 100px;">{{k.objectLogicalName}}</div>
-                          </td>
-                          <td>
-                            <div style="word-wrap: break-word;width: 100px;">{{k.execute}}</div>
-                          </td>
-                          <td class="text-right">
-                              <a class="btn btn-primary" style="margin-right:5px" 
-                              [routerLink]="['/keywords/edit',k.id]"> 
-                                  <i class="now-ui-icons design-2_ruler-pencil"></i> Edit</a>
-                              <a class="btn btn-primary" (click)="deleteKeyword(k.id)">
-                                <i class="now-ui-icons ui-1_simple-remove"></i> Delete</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div> -->
+              <!-- <div class="card"> -->
+                <!-- <div class="card-header"> -->
+                  <h5> Keywords</h5>
+                <!-- </div> -->
+                <!-- <div class="card-body"> -->
+              
                   <p-table #ky [value]="keywords" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
                     <ng-template pTemplate="header" let-columns>
                         <tr>
-                            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                            <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
                                 {{col.header}}
                                 <p-sortIcon [field]="col.field"></p-sortIcon>
                             </th>
@@ -103,8 +51,11 @@
                         </tr>
                     </ng-template>
                 </p-table>
-                </div>
-              </div>
-         </div>
-        </div>
+                <button class="btn btn-primary pull-right" style="margin-right:27px;font-size: 0.5rem;" 
+                  [routerLink]="['/keywords/add']"> 
+                      <i class="now-ui-icons ui-1_simple-add"></i> Add</button>
+                <!-- </div> -->
+              <!-- </div> -->
+         <!-- </div> -->
+        <!-- </div> -->
     </div>
