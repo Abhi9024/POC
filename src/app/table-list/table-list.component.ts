@@ -22,10 +22,13 @@ export class TableListComponent implements OnInit {
   controller3Cols:any[];
   controller2Cols:any[];
   controller1Cols:any[];
+  loading:boolean = true;
+
   constructor(private svc: TestControllerService,private router: Router,
     private confirmationDialogService: ConfirmationDialogService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.getControllers();
     this.getControllers1();
     this.getControllers2();
@@ -70,6 +73,7 @@ export class TableListComponent implements OnInit {
     .subscribe((result)=>{
       //console.log(result);
       this.testControllers3 = result;
+      this.loading = false;
       
       
     },

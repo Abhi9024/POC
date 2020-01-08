@@ -9,7 +9,7 @@
             <!-- </div>
             <br>
             <div class="card-body"> -->
-              <p-table #ts [value]="testscripts" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
+              <p-table #ts [loading]="loading"  [scrollable]="true" scrollHeight="500px"  [value]="testscripts" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
                 <ng-template pTemplate="header" let-columns>
                     <tr>
                         <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">

@@ -13,22 +13,24 @@ export class KeywordsComponent implements OnInit {
 
   keywords: Keywords[];
   cols:any[];
+  loading:boolean = true;
   constructor(private service: KeywordService,private router:Router) { }
 
   ngOnInit() {
+    this.loading = true;
     this.getKeywords();
     this.cols=[
-      { field: 'functionName', header: 'Function Name' },
-      { field: 'stepDescription', header: 'Step Description' },
-      { field: 'actionOrKeyword', header: 'Action/Keyword' },
-      { field: 'objectLogicalName', header: 'Object LogicalName' },
-      { field: 'execute', header: 'Execute' },
-      { field: 'param1', header: 'Param1' },
-      { field: 'param2', header: 'Param2' },
-      { field: 'param3', header: 'Param3' },
-      { field: 'param4', header: 'Param4' },
-      { field: 'featureName', header: 'Feature Name' },
-      { field: 'actions', header: 'Actions' }
+      { field: 'functionName', header: 'Function Name' , width: '50%'},
+      { field: 'stepDescription', header: 'Step Description' ,width: '50%' },
+      { field: 'actionOrKeyword', header: 'Action/Keyword',width: '50%' },
+      { field: 'objectLogicalName', header: 'Object LogicalName' , width: '50%'},
+      { field: 'execute', header: 'Execute' ,width: '50%'},
+      { field: 'param1', header: 'Param1' ,width: '50%'},
+      { field: 'param2', header: 'Param2' ,width: '50%'},
+      { field: 'param3', header: 'Param3' ,width: '50%'},
+      { field: 'param4', header: 'Param4',width: '50%' },
+      { field: 'featureName', header: 'Feature Name',width: '50%' },
+      { field: 'actions', header: 'Actions',width: '50%' }
   ];
   }
 
@@ -37,10 +39,12 @@ export class KeywordsComponent implements OnInit {
     .subscribe((result)=>{
       //console.log(result);
       this.keywords = result;
+      this.loading = false;
       
     },
      error =>{
        console.log(error.message);
+
      },
      ()=>{
        //console.log(this.testControllers3);

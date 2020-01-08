@@ -12,8 +12,10 @@ import { Router } from '@angular/router';
 export class RepositoryComponent implements OnInit {
   repositories: Repository[];
   cols:any[];
+  loading:boolean = true;
   constructor(private service: RepositoryService,private router:Router) { }
   ngOnInit() {
+    this.loading = true;
     this.getRepositories();
     this.cols=[
       { field: 'logicalName', header: 'Logical Name' },
@@ -31,6 +33,7 @@ export class RepositoryComponent implements OnInit {
     .subscribe((result)=>{
       //console.log(result);
       this.repositories = result;
+      this.loading=false;
     },
      error =>{
        console.log(error.message);

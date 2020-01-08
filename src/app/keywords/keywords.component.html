@@ -9,10 +9,10 @@
                 <!-- </div> -->
                 <!-- <div class="card-body"> -->
               
-                  <p-table #ky [value]="keywords" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
+                  <p-table #ky  [resizableColumns]="true" columnResizeMode="expand" [loading]="loading"  [scrollable]="true" scrollHeight="500px" [value]="keywords" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
                     <ng-template pTemplate="header" let-columns>
                         <tr>
-                            <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
+                            <th  ttResizableColumn *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
                                 {{col.header}}
                                 <p-sortIcon [field]="col.field"></p-sortIcon>
                             </th>
