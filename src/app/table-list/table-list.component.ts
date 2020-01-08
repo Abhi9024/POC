@@ -129,7 +129,7 @@ export class TableListComponent implements OnInit {
   }
 
   deleteController2(id:number){
-    if(confirm("Are you sure to delete?")) {
+    if(this.confirmationDialogService.confirm('Are you sure you want to delete?')) {
       this.svc.deleteTestController2(id);
        setTimeout(f=>{
          this.getControllers();
@@ -137,7 +137,7 @@ export class TableListComponent implements OnInit {
     }
   }
   deleteController1(id:number){
-    if(confirm("Are you sure to delete?")) {
+    if(this.confirmationDialogService.confirm('Are you sure you want to delete?')) {
       this.svc.deleteTestController1(id);
        setTimeout(f=>{
          this.getControllers();
