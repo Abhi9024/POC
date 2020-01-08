@@ -10,7 +10,7 @@ import { Keywords } from '../models/keyword.model';
   providedIn: 'root'
 })
 export class KeywordService {
-  public apiUrl:string = "http://ec2-13-232-126-221.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string = "http://ec2-13-232-44-184.ap-south-1.compute.amazonaws.com/api";
   
   
    constructor(private httpClient: HttpClient){
