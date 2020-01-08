@@ -9,7 +9,7 @@ import { Repository } from '../models/repository.model';
   providedIn: 'root'
 })
 export class RepositoryService {
-  public apiUrl:string = "http://ec2-13-232-126-221.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string = "http://ec2-13-232-44-184.ap-south-1.compute.amazonaws.com/api";
   
    constructor(private httpClient: HttpClient){
    }

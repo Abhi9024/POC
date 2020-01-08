@@ -19,15 +19,20 @@
     padding: 0.571em 0.857em;
     border: 1px solid #c8c8c8;
     font-weight: 600 !important;
-    font-size: x-small;
+    font-size: small;
     color:#e1eaf2;
     background-color: #f4f4f4;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .ui-table .ui-table-tbody > tr > td{
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .ui-widget{
-      font-size: 9px !important;
+      font-size: 11px !important;
   }
  
