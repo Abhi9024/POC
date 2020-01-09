@@ -13,9 +13,11 @@ export class TestscriptsComponent implements OnInit {
 
   testscripts: TestScript[];
   cols:any[];
+  loading:boolean = true;
   constructor(private service: TestScriptsService,private router:Router) { }
 
   ngOnInit() {
+    this.loading=true;
     this.getTestScripts();
     this.cols=[
         { field: 'testCaseID', header: 'Test CaseID' },
@@ -38,6 +40,7 @@ export class TestscriptsComponent implements OnInit {
     .subscribe((result)=>{
       //console.log(result);
       this.testscripts = result;
+      this.loading =false;
       
     },
      error =>{

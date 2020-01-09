@@ -2,7 +2,7 @@
 </div>
 <p-tabView>
   <p-tabPanel header="TestController3">
-    <p-table #tt [value]="testControllers3" sortMode="multiple" [columns]="controller3Cols" [responsive]="true">
+    <p-table #tt [loading]="loading"  [scrollable]="true" scrollHeight="500px"  [value]="testControllers3" sortMode="multiple" [columns]="controller3Cols" [responsive]="true">
       <ng-template pTemplate="header" let-columns>
           <tr>
               <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
@@ -35,7 +35,7 @@
       <i class="now-ui-icons ui-1_simple-add"></i> Add</button>
   </p-tabPanel>
   <p-tabPanel header="TestController1">
-    <p-table #tt1 [value]="testControllers1" sortMode="multiple" [columns]="controller1Cols" [paginator]="true" [rows]="10">
+    <p-table #tt1 [loading]="loading"  [scrollable]="true" scrollHeight="500px"  [value]="testControllers1" sortMode="multiple" [columns]="controller1Cols" [paginator]="true" [rows]="10">
       <ng-template pTemplate="header" let-columns>
           <tr>
               <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
@@ -76,7 +76,7 @@
     <i class="now-ui-icons ui-1_simple-add"></i> Add</button>
   </p-tabPanel>
   <p-tabPanel header="TestController2">
-    <p-table #tt2 [value]="testControllers2" sortMode="multiple" [columns]="controller2Cols" [paginator]="true" [rows]="10">
+    <p-table #tt2  [loading]="loading" [scrollable]="true" scrollHeight="500px"  [value]="testControllers2" sortMode="multiple" [columns]="controller2Cols" [paginator]="true" [rows]="10">
       <ng-template pTemplate="header" let-columns>
           <tr>
               <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
