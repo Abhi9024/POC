@@ -5,7 +5,7 @@ import { TestController2 } from '../models/testcontrolller2.model';
 import { TestController1 } from '../models/testcontroller1.model';
 import { Router } from '@angular/router';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog/confirmation-dialog.service';
-
+import * as Chartist from 'chartist';
 
 @Component({
   selector: 'app-table-list',
@@ -24,11 +24,29 @@ export class TableListComponent implements OnInit {
   controller1Cols:any[];
   loading:boolean = true;
 
+  // Cards
+  
+
   constructor(private svc: TestControllerService,private router: Router,
     private confirmationDialogService: ConfirmationDialogService) { }
 
+    public hexToRGB(hex, alpha) {
+      var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+  
+      if (alpha) {
+        return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+      } else {
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+    }
+
   ngOnInit() {
-    this.loading = true;
+    
+
+
+    this.loading = false;
     this.getControllers();
     this.getControllers1();
     this.getControllers2();
@@ -64,6 +82,10 @@ export class TableListComponent implements OnInit {
         { field: 'testScriptDescription', header: 'TestScript Description' },
         { field: 'actions', header: 'Actions' }
       ];
+      
+ 
+     
+    
   }
 
 
@@ -158,6 +180,14 @@ export class TableListComponent implements OnInit {
   }
   onRowEditController3(id:number){
     this.router.navigate(['/table-list/testcontroller3/edit', id]);
+  }
+
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  public chartHovered(e:any):void {
+    console.log(e);
   }
 
 }

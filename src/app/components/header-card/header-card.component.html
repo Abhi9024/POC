@@ -1,0 +1,112 @@
+<div class="row align-items-center">
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header" style="padding-top: 0px;">
+                <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Current User</h5>
+              <h4 class="card-title" style="margin-top: 0px;">Profile</h4>
+              <!-- <div ngbDropdown>
+                <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+                  <i class="now-ui-icons loader_gear"></i>
+                </button>
+                <div ngbDropdownMenu class="dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item text-danger" href="#">Remove Data</a>
+                </div>
+              </div> -->
+            </div>
+            <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
+                <div class="row align-items-center">
+                    <div class="col-lg-4" style="text-align: center;">
+                      <i class="fa fa-user-circle fa-5x" style="color: darkgray;" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-8">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <h4 style="margin: 0px;">VISHNU B</h4>
+                          <h6 style="font-size: 12px;margin-top: 8px;">Registered on Jan 4, 2019</h6>
+                          <h5 style="font-size: 13px; font-style: italic;">27 operations till date</h5>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header" style="padding-top: 0px;">
+              <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Number of Records</h5>
+              <h4 class="card-title" style="margin-top: 0px;">Jan 10, 2020</h4>
+              <!-- <div ngbDropdown>
+                <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+                  <i class="now-ui-icons loader_gear"></i>
+                </button>
+                <div ngbDropdownMenu class="dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item text-danger" href="#">Remove Data</a>
+                </div>
+              </div> -->
+            </div>
+            <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
+              <div class="chart-area">
+                <canvas baseChart id="lineChartExample"
+                            height="130"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [colors]="lineChartColors"
+                            [options]="lineChartOptions"
+                            [chartType]="lineChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card card-chart">
+          <div class="card-header" style="padding-top: 0px;">
+              <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Timeline</h5>
+            <h4 class="card-title" style="margin-top: 0px;">Recent Operations</h4>
+            <!-- <div ngbDropdown>
+              <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+                <i class="now-ui-icons loader_gear"></i>
+              </button>
+              <div ngbDropdownMenu class="dropdown-menu-right">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item text-danger" href="#">Remove Data</a>
+              </div>
+            </div> -->
+          </div>
+          <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
+              <div class="row align-items-center" style="padding-top: 10px;">
+                <div class="col-lg-4">
+                  <i class="fa fa-clock-o fa-5x" aria-hidden="true" style="color: darkgray;"></i>
+                </div>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12" style="border-bottom: 1px solid #e9ecef;padding: 5px;font-style: italic;font-size: 11px;">
+                      <i class="fa fa-pencil" aria-hidden="true"></i> Vishnu updated 3m ago
+                    </div>
+                    <div class="col-lg-12" style="border-bottom: 1px solid #e9ecef;padding: 5px;font-style: italic;font-size: 11px;">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Vishnu edited 7m ago
+                      </div>
+                      <div class="col-lg-12" style="padding: 5px;font-style: italic;font-size: 11px;">
+                        <i class="fa fa-address-card" aria-hidden="true"></i> Vishnu logged in 12m ago
+                        </div>
+                  </div>
+                </div>
+                  
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>

@@ -17,6 +17,7 @@ import { RepositoryAddComponent } from '../../repository/repository-add/reposito
 import { KeywordsComponent } from '../../keywords/keywords.component';
 import { KeywordsEditComponent } from '../../keywords/keywords-edit/keywords-edit.component';
 import { KeywordsAddComponent } from '../../keywords/keywords-add/keywords-add.component';
+import { IconsComponent } from '../../icons/icons.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -36,4 +37,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'repository',     component: RepositoryComponent },
     { path: 'repository/edit/:id', component: RepositoryEditComponent},
     { path: 'repository/add', component: RepositoryAddComponent},
+    {path: 'icons', component: IconsComponent}
 ];
