@@ -1,6 +1,6 @@
 <div class="logo">
     <a class="simple-text logo-mini" (click)="showItems = !showItems">
-        <i class="now-ui-icons arrows-1_minimal-left"></i>
+        <i (click)="globalService.opened = !globalService.opened" class="now-ui-icons arrows-1_minimal-left"></i>
     </a>
     <a class="simple-text logo-normal">
         Automation API
