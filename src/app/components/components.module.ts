@@ -6,22 +6,28 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { HeaderCardComponent } from './header-card/header-card.component';
+
+import { ChartsModule } from 'ng2-charts/ng2-charts'
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    ChartsModule
   ],
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderCardComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderCardComponent
   ]
 })
 export class ComponentsModule { }

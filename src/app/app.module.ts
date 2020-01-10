@@ -20,6 +20,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -34,7 +35,8 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    
   ],
   providers: [TestControllerService,TestScriptsService,KeywordService,RepositoryService],
   bootstrap: [AppComponent],

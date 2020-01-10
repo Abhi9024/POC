@@ -1,5 +1,7 @@
-<div class="panel-header panel-header-sm">
+<div class="panel-header panel-header-sm" style="height: 50px !important; padding: 0px;">
 </div>
+
+<app-header-card></app-header-card>
 <p-tabView>
   <p-tabPanel header="TestController3">
     <p-table #tt [loading]="loading"  [scrollable]="true" scrollHeight="500px"  [value]="testControllers3" sortMode="multiple" [columns]="controller3Cols" [responsive]="true">

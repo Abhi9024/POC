@@ -41,6 +41,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
 import { CodeHighlighterModule } from 'primeng/codehighlighter';
 import {TooltipModule} from 'primeng/tooltip';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
@@ -62,7 +63,8 @@ import {TooltipModule} from 'primeng/tooltip';
 		InputTextModule,
 		TabViewModule,
     CodeHighlighterModule,
-    TooltipModule
+    TooltipModule,
+    ComponentsModule
   ],
   declarations: [
     DashboardComponent,
