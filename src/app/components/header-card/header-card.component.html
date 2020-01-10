@@ -1,5 +1,6 @@
-<div class="row align-items-center">
-    <div class="col-lg-4">
+<div class="container-fluid">
+<div class="row align-items-center" style="padding-top: 12px;">
+    <div class="col-lg-3">
         <div class="card card-chart">
             <div class="card-header" style="padding-top: 0px;">
                 <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Current User</h5>
@@ -24,7 +25,7 @@
                     <div class="col-lg-8">
                       <div class="row">
                         <div class="col-lg-12">
-                          <h4 style="margin: 0px;">VISHNU B</h4>
+                          <h4 style="margin: 0px;font-size: 1.3em;">ARPIT DWIVEDI</h4>
                           <h6 style="font-size: 12px;margin-top: 8px;">Registered on Jan 4, 2019</h6>
                           <h5 style="font-size: 13px; font-style: italic;">27 operations till date</h5>
                         </div>
@@ -36,7 +37,7 @@
         </div>
     </div>
     
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="card card-chart">
             <div class="card-header" style="padding-top: 0px;">
               <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Number of Records</h5>
@@ -68,7 +69,40 @@
             </div>
           </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
+      <div class="card card-chart">
+        <div class="card-header" style="padding-top: 0px;">
+          <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Number of Operations</h5>
+          <h4 class="card-title" style="margin-top: 0px;">January, 2020</h4>
+          <!-- <div ngbDropdown>
+            <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+              <i class="now-ui-icons loader_gear"></i>
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu-right">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item text-danger" href="#">Remove Data</a>
+            </div>
+          </div> -->
+        </div>
+        <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
+          <div class="chart-area">
+            <!-- <canvas id="lineChartExampleWithNumbersAndGrid"></canvas> -->
+            <canvas baseChart id="lineChartExampleWithNumbersAndGrid"
+                        [datasets]="lineChartWithNumbersAndGridData"
+                        [labels]="lineChartWithNumbersAndGridLabels"
+                        [colors]="lineChartWithNumbersAndGridColors"
+                        [options]="lineChartWithNumbersAndGridOptions"
+                        [chartType]="lineChartWithNumbersAndGridType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-lg-3">
       <div class="card card-chart">
           <div class="card-header" style="padding-top: 0px;">
               <h5 class="card-category" style="margin-bottom: 0px;margin-top: 3px;">Timeline</h5>
@@ -93,13 +127,13 @@
                 <div class="col-lg-8">
                   <div class="row">
                     <div class="col-lg-12" style="border-bottom: 1px solid #e9ecef;padding: 5px;font-style: italic;font-size: 11px;">
-                      <i class="fa fa-pencil" aria-hidden="true"></i> Vishnu updated 3m ago
+                      <i class="fa fa-pencil" aria-hidden="true"></i> Arpit updated 3m ago
                     </div>
                     <div class="col-lg-12" style="border-bottom: 1px solid #e9ecef;padding: 5px;font-style: italic;font-size: 11px;">
-                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Vishnu edited 7m ago
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Arpit edited 7m ago
                       </div>
                       <div class="col-lg-12" style="padding: 5px;font-style: italic;font-size: 11px;">
-                        <i class="fa fa-address-card" aria-hidden="true"></i> Vishnu logged in 12m ago
+                        <i class="fa fa-address-card" aria-hidden="true"></i> Arpit logged in 12m ago
                         </div>
                   </div>
                 </div>
@@ -109,4 +143,6 @@
           </div>
       </div>
   </div>
+  
+</div>
 </div>

@@ -17,6 +17,8 @@ import { TestScriptsService } from './services/testscripts.service';
 import { KeywordService } from './services/keyword.service';
 import { RepositoryService } from './services/repository.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog/confirmation-dialog.component';
+import { MatSidenavModule } from '@angular/material';
+import { GlobalService } from './services/global.service';
 
 
 
@@ -30,7 +32,8 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     RouterModule,
     AppRoutingModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatSidenavModule
   ],
   declarations: [
     AppComponent,
@@ -38,7 +41,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     ConfirmationDialogComponent,
     
   ],
-  providers: [TestControllerService,TestScriptsService,KeywordService,RepositoryService],
+  providers: [TestControllerService,TestScriptsService,KeywordService,RepositoryService, GlobalService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmationDialogComponent]
 })

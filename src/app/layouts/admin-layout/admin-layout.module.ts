@@ -42,6 +42,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { CodeHighlighterModule } from 'primeng/codehighlighter';
 import {TooltipModule} from 'primeng/tooltip';
 import { ComponentsModule } from '../../components/components.module';
+import { MatSidenavModule } from '@angular/material';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 @NgModule({
   imports: [
@@ -64,7 +67,8 @@ import { ComponentsModule } from '../../components/components.module';
 		TabViewModule,
     CodeHighlighterModule,
     TooltipModule,
-    ComponentsModule
+    ComponentsModule,
+    MatSidenavModule
   ],
   declarations: [
     DashboardComponent,
@@ -90,6 +94,9 @@ import { ComponentsModule } from '../../components/components.module';
     KeywordsComponent,
     KeywordsEditComponent,
     KeywordsAddComponent
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 
