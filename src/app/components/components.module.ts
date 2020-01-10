@@ -8,14 +8,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderCardComponent } from './header-card/header-card.component';
 
-import { ChartsModule } from 'ng2-charts/ng2-charts'
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { FormsModule} from '@angular/forms';
+import { MatSidenavModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule,
+    MatSidenavModule
   ],
   declarations: [
     FooterComponent,
