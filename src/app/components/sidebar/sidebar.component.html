@@ -1,15 +1,15 @@
 <div class="logo">
-    <a class="simple-text logo-mini" (click)="showItems = !showItems">
-        <i class="pi pi-bars icon"></i>
+    <a class="simple-text logo-mini">
+        <i (click)="globalService.opened = !globalService.opened" class="now-ui-icons arrows-1_minimal-left"></i>
     </a>
     <a class="simple-text logo-normal">
         Automation API
     </a>
 </div>
-<div *ngIf="showItems" class="sidebar-wrapper">
+<div class="sidebar-wrapper">
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a [routerLink]="[menuItem.path]">
+            <a (click)="globalService.opened = !globalService.opened" [routerLink]="[menuItem.path]">
                 <i class="now-ui-icons {{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>
             </a>
