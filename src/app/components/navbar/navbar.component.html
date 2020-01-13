@@ -1,21 +1,13 @@
 
-<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top" style="padding-top: 3px;padding-bottom: 3px;">
     <div class="container-fluid">
-        <div class="navbar-wrapper" style="width: 100%;">
-          <div clas="row" style="width: 100%">
-            <div class="col-lg-3 col-md-3">
-              <i (click)="globalService.opened = !globalService.opened" class="pi pi-bars icon"></i>
-            </div>
-            <div class="col-lg-4 col-md-4">
-              <!-- <div class="navbar-toggle">
-                <button type="button" class="navbar-toggler" (click)="sidebarToggle()">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
-            </div> -->
-            <a class="navbar-brand" href="#pablo">{{getTitle()}}</a>
-            </div>
+      <div class="row align-items-center" style="width: 100% !important;">
+        <div class="col-lg-3 col-md-3">
+          <i class="pi pi-bars icon" (click)="globalService.opened = !globalService.opened" style="background-color: #007bff;color: white; font-size: 30px;"></i>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <a class="navbar-brand" style="font-size: 15px;">{{getTitle()}}</a>
+        </div>
             <div class="col-lg-5 col-md-5" style="text-align: right">
             <button class="navbar-toggler" type="button" (click)="collapse()"
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
@@ -69,7 +61,6 @@
           </div>
           
         </div>
-        
-    </div>
-    </div>
+        </div>
+      
 </nav>

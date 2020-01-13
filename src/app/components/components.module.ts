@@ -8,8 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderCardComponent } from './header-card/header-card.component';
 
-import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { FormsModule} from '@angular/forms';
+import { ChartsModule } from 'ng2-charts/ng2-charts'
 import { MatSidenavModule } from '@angular/material';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { MatSidenavModule } from '@angular/material';
     RouterModule,
     NgbModule,
     ChartsModule,
-    FormsModule,
     MatSidenavModule
   ],
   declarations: [
