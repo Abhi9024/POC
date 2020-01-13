@@ -152,21 +152,21 @@ export class TableListComponent implements OnInit {
   getControllers1(){
     this.svc.getAllController1()
     .subscribe((result)=>{
-      console.log(result);
+      //console.log(result);
       this.testControllers1 = result;
-      
+      //console.log(this.testControllers1);
     },
      error =>{
        console.log(error.message);
      },
      ()=>{
-       console.log(this.testControllers1);
+       //console.log(this.testControllers1);
      })
   }
   getControllers2(){
     this.svc.getAllController2()
     .subscribe((result)=>{
-      console.log(result);
+      //console.log(result);
       this.testControllers2 = result;
       
     },
@@ -174,7 +174,7 @@ export class TableListComponent implements OnInit {
        console.log(error.message);
      },
      ()=>{
-       console.log(this.testControllers3);
+       //console.log(this.testControllers3);
      })
   }
 

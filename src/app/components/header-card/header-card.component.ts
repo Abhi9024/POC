@@ -221,4 +221,10 @@ export class HeaderCardComponent implements OnInit {
     this.lineChartWithNumbersAndGridType = 'line';
     
   }
+  chartHovered($event){
+
+  }
+  chartClicked($event){
+    
+  }
 }

@@ -8,7 +8,7 @@ import { TestScript } from '../models/testscript.model';
   providedIn: 'root'
 })
 export class TestScriptsService {
-  public apiUrl:string = "http://ec2-13-232-54-186.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string = "http://ec2-3-6-40-41.ap-south-1.compute.amazonaws.com/api";
   
    constructor(private httpClient: HttpClient){
    }

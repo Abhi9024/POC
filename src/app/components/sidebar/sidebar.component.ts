@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../../services/global.service';
 
 declare interface RouteInfo {
     path: string;
@@ -20,10 +21,12 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
+  globalService:any;
   showItems = true;
 
-  constructor() { }
+  constructor(private globalsvc:GlobalService ) { 
+      this.globalService=globalsvc;
+  }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
