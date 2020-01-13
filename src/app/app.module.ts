@@ -16,10 +16,10 @@ import { TestControllerService } from './services/testcontroller.service';
 import { TestScriptsService } from './services/testscripts.service';
 import { KeywordService } from './services/keyword.service';
 import { RepositoryService } from './services/repository.service';
+import { GlobalService } from './services/global.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog/confirmation-dialog.component';
 import { MatSidenavModule } from '@angular/material';
-import { GlobalService } from './services/global.service';
-
+import {MultiSelectModule} from 'primeng/multiselect';
 
 
 
@@ -33,7 +33,8 @@ import { GlobalService } from './services/global.service';
     AppRoutingModule,
     NgbModule,
     ToastrModule.forRoot(),
-    MatSidenavModule
+    MatSidenavModule,
+    MultiSelectModule
   ],
   declarations: [
     AppComponent,

@@ -6,6 +6,7 @@ import { TestController1 } from '../models/testcontroller1.model';
 import { Router } from '@angular/router';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog/confirmation-dialog.service';
 import * as Chartist from 'chartist';
+import { SelectItem } from 'primeng/api/selectitem';
 
 @Component({
   selector: 'app-table-list',
@@ -19,9 +20,12 @@ export class TableListComponent implements OnInit {
   testControllers3: TestController3[];
   testControllers1: TestController1[];
   testControllers2: TestController2[];
-  controller3Cols:any[];
+  controller3Cols:SelectItem[];
   controller2Cols:any[];
   controller1Cols:any[];
+  selectedController3Cols: any[];
+  selectedController2Cols: any[];
+  selectedController1Cols: any[];
   loading:boolean = true;
 
   // Cards
@@ -42,6 +46,30 @@ export class TableListComponent implements OnInit {
       }
     }
 
+    LoadController3Cols(){
+      this.selectedController3Cols = [];
+      this.controller3Cols.forEach(col => {
+        this.selectedController3Cols.push(col.value);
+      });
+      // this.selectedController3Cols = this.selectedController3Cols.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0));
+    }
+
+    LoadController2Cols(){
+      this.selectedController2Cols = [];
+      this.controller2Cols.forEach(col => {
+        this.selectedController2Cols.push(col.value);
+      });
+      // this.selectedController2Cols = this.selectedController2Cols.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0));
+    }
+
+    LoadController1Cols(){
+      this.selectedController1Cols = [];
+      this.controller1Cols.forEach(col => {
+        this.selectedController1Cols.push(col.value);
+      });
+      // this.selectedController1Cols = this.selectedController1Cols.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0));
+    }
+
   ngOnInit() {
     
 
@@ -51,39 +79,43 @@ export class TableListComponent implements OnInit {
     this.getControllers1();
     this.getControllers2();
     this.controller3Cols = [
-      { field: 'vmid', header: 'VMID' },
-      { field: 'browser', header: 'Browser' },
-      { field: 'exec', header: 'Exec' },
-      { field: 'actions', header: 'Actions' }
+      {label: 'VMID', value: { field: 'vmid', header: 'VMID', order: 1 }},
+      {label: 'Browser', value: { field: 'browser', header: 'Browser', order: 2 }},
+      {label: 'Exec', value: { field: 'exec', header: 'Exec', order: 3 }},
+      {label: 'Actions', value: { field: 'actions', header: 'Actions', order: 4 }}
+      // { field: 'vmid', header: 'VMID' },
+      // { field: 'browser', header: 'Browser' },
+      // { field: 'exec', header: 'Exec' },
+      // { field: 'actions', header: 'Actions' }
       ];
-
+      this.LoadController3Cols();
       this.controller1Cols = [
-        { field: 'slno', header: 'SLNO' },
-        { field: 'moduleID', header: 'Module ID' },
-        { field: 'moduleSeqID', header: 'Module SeqID' },
-        { field: 'machineID', header: 'Machine ID' },
-        { field: 'machineSequenceID', header: 'Machine SequenceID' },
-        { field: 'execute', header: 'Execute' },
-        { field: 'actions', header: 'Actions' }
+        {label: 'SLNO', value: { field: 'slno', header: 'SLNO', order: 1 }},
+        {label: 'Module ID', value: { field: 'moduleID', header: 'Module ID', order: 2 }},
+        {label: 'Module SeqID', value: { field: 'moduleSeqID', header: 'Module SeqID', order: 3 }},
+        {label: 'Machine ID', value: { field: 'machineID', header: 'Machine ID', order: 4 }},
+        {label: 'Machine SequenceID', value: { field: 'machineSequenceID', header: 'Machine SequenceID', order: 5 }},
+        {label: 'Execute', value: { field: 'execute', header: 'Execute', order: 6 }},
+        {label: 'Actions', value: { field: 'actions', header: 'Actions', order: 7 }}
       ];
-
+      this.LoadController1Cols();
       this.controller2Cols = [
-        { field: 'sno', header: 'SNO' },
-        { field: 'featureID', header: 'Feature ID' },
-        { field: 'testCaseID', header: 'TestCase ID' },
-        { field: 'run', header: 'Run' },
-        { field: 'iterations', header: 'Iterations' },
-        { field: 'browsers', header: 'Browsers' },
-        { field: 'sequenceID', header: 'Sequence ID' },
-        { field: 'testType', header: 'Test Type' },
-        { field: 'jira_ID', header: 'Jira ID' },
-        { field: 'stepsCount', header: 'Steps Count' },
-        { field: 'testScriptName', header: 'TestScript Name' },
-        { field: 'testScriptDescription', header: 'TestScript Description' },
-        { field: 'actions', header: 'Actions' }
+        {label: 'SLNO', value: { field: 'sno', header: 'SNO', order: 1  }},
+        {label: 'Feature ID', value: { field: 'featureID', header: 'Feature ID', order: 2  }},
+        {label: 'TestCase ID', value: { field: 'testCaseID', header: 'TestCase ID', order: 3  }},
+        {label: 'Run', value: { field: 'run', header: 'Run', order: 4  }},
+        {label: 'Iterations', value: { field: 'iterations', header: 'Iterations', order: 5  }},
+        {label: 'Browsers', value: { field: 'browsers', header: 'Browsers', order: 6  }},
+        {label: 'Sequence ID', value: { field: 'sequenceID', header: 'Sequence ID', order: 7  }},
+        {label: 'Test Type', value: { field: 'testType', header: 'Test Type', order: 8  }},
+        {label: 'Jira ID', value: { field: 'jira_ID', header: 'Jira ID', order: 9  }},
+        {label: 'Steps Count', value: { field: 'stepsCount', header: 'Steps Count', order: 10  }},
+        {label: 'TestScript Name', value: { field: 'testScriptName', header: 'TestScript Name', order: 11  }},
+        {label: 'TestScript Description', value: { field: 'testScriptDescription', header: 'TestScript Description', order: 12  }},
+        {label: 'Actions', value: { field: 'actions', header: 'Actions', order: 13  }}
       ];
       
- 
+      this.LoadController2Cols();
      
     
   }
