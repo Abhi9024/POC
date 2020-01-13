@@ -19,6 +19,7 @@ import { RepositoryService } from './services/repository.service';
 import { GlobalService } from './services/global.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog/confirmation-dialog.component';
 import { MatSidenavModule } from '@angular/material';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 
 
@@ -32,7 +33,8 @@ import { MatSidenavModule } from '@angular/material';
     AppRoutingModule,
     NgbModule,
     ToastrModule.forRoot(),
-    MatSidenavModule
+    MatSidenavModule,
+    MultiSelectModule
   ],
   declarations: [
     AppComponent,
