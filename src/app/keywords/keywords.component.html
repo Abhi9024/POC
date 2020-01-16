@@ -1,24 +1,37 @@
 <div class="panel-header panel-header-sm" style="height: 50px !important; padding: 0px;">
+</div>
+<app-header-card></app-header-card>
+<!-- <div class="main-content"> -->
+<!-- <div class="row"> -->
+<div class="col-md-12">
+    <!-- <div class="card"> -->
+    <!-- <div class="card-header"> -->
+    <h5> Keywords</h5>
+    <!-- </div> -->
+    <!-- <div class="card-body"> -->
+    <div class="row align-items-center">
+        <div class="col-lg-2 col-md-2" style="text-align: right;">
+            <label style="margin: 0px !important"> Choose The Columns </label>
+        </div>
+        <div class="col-lg-10 col-md-10" style="text-align: left; width: 70px;">
+            <p-multiSelect  (change)="LoadKeyWordsCols()" [options]="cols"
+                [(ngModel)]="selectedKeyWordsCols"></p-multiSelect>
+        </div>
     </div>
-    <app-header-card></app-header-card>
-    <!-- <div class="main-content"> -->
-       <!-- <div class="row"> -->
-         <div class="col-md-12">
-              <!-- <div class="card"> -->
-                <!-- <div class="card-header"> -->
-                  <h5> Keywords</h5>
-                <!-- </div> -->
-                <!-- <div class="card-body"> -->
-              
-                  <p-table #ky  [resizableColumns]="true" columnResizeMode="expand" [loading]="loading"  [scrollable]="true" scrollHeight="500px" [value]="keywords" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
-                    <ng-template pTemplate="header" let-columns>
-                        <tr>
-                            <th  ttResizableColumn *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
-                                {{col.header}}
-                                <p-sortIcon [field]="col.field"></p-sortIcon>
-                            </th>
-                        </tr>
-                        <tr>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <p-table #ky [resizableColumns]="true" columnResizeMode="expand" [loading]="loading" [scrollable]="true"
+                scrollHeight="500px" [value]="keywords" sortMode="multiple" [columns]="selectedKeyWordsCols"
+                [paginator]="true" [rows]="10">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th tResizableColumn *ngFor="let col of columns" [pSortableColumn]="col.field"
+                            pTooltip="{{col.header}}">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                    </tr>
+                    <tr>
                             <th *ngFor="let col of columns" [ngSwitch]="col.field">
                                 <input *ngSwitchCase="'functionName'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
                                 <input *ngSwitchCase="'stepDescription'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
@@ -32,31 +45,52 @@
                                 <input *ngSwitchCase="'featureName'" pInputText type="text" style="width:80%;" (input)="ky.filter($event.target.value, col.field, 'contains')">
                             </th>
                         </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-ts>
-                        <tr>
-                            <td>{{ts.functionName}}</td>
-                            <td>{{ts.stepDescription}}</td>
-                            <td>{{ts.actionOrKeyword}}</td>
-                            <td>{{ts.objectLogicalName}}</td>
-                            <td>{{ts.execute}}</td>
-                            <td>{{ts.param1}}</td>
-                            <td>{{ts.param2}}</td>
-                            <td>{{ts.param3}}</td>
-                            <td>{{ts.param4}}</td>
-                            <td>{{ts.featureName}}</td>
-                            <td style="text-align:center">
-                             <button pButton type="button" style="background-color: #100699 !important;margin-bottom: 5px;" icon="pi pi-pencil" class="ui-button-success ui-button-raised" (click)="onRowEditInit(ts.id)"></button>
-                             <button pButton type="button" icon="pi pi-times" class="ui-button-danger" (click)="deleteKeyword(ts.id)"></button>
+                </ng-template>
+                <!-- <ng-template pTemplate="body" let-ts>
+                    <tr>
+                        <td>{{ts.functionName}}</td>
+                        <td>{{ts.stepDescription}}</td>
+                        <td>{{ts.actionOrKeyword}}</td>
+                        <td>{{ts.objectLogicalName}}</td>
+                        <td>{{ts.execute}}</td>
+                        <td>{{ts.param1}}</td>
+                        <td>{{ts.param2}}</td>
+                        <td>{{ts.param3}}</td>
+                        <td>{{ts.param4}}</td>
+                        <td>{{ts.featureName}}</td>
+                        <td style="text-align:center">
+                            <button pButton type="button"
+                                style="background-color: #100699 !important;margin-bottom: 5px;" icon="pi pi-pencil"
+                                class="ui-button-success ui-button-raised" (click)="onRowEditInit(ts.id)"></button>
+                            <button pButton type="button" icon="pi pi-times" class="ui-button-danger"
+                                (click)="deleteKeyword(ts.id)"></button>
+                        </td>
+                    </tr>
+                </ng-template> -->
+                <ng-template pTemplate="body" let-rowData let-ts="selectedKeyWordsCols">
+                        <tr [pSelectableRow]="rowData">
+                            <td *ngFor="let col of selectedKeyWordsCols">
+                                <ng-container *ngIf="col.field != 'actions'">
+                                    {{rowData[col.field]}}
+                                </ng-container>
+                                <ng-container *ngIf="col.field == 'actions'">
+                                        <button pButton type="button"
+                                        style="background-color: #100699 !important;margin-bottom: 5px;" icon="pi pi-pencil"
+                                        class="ui-button-success ui-button-raised" (click)="onRowEditInit(ts.id)"></button>
+                                    <button pButton type="button" icon="pi pi-times" class="ui-button-danger"
+                                        (click)="deleteKeyword(ts.id)"></button>
+                                </ng-container>
                             </td>
                         </tr>
                     </ng-template>
-                </p-table>
-                <button class="btn btn-primary pull-right" style="margin-right:27px;font-size: 0.5rem;" 
-                  [routerLink]="['/keywords/add']"> 
-                      <i class="now-ui-icons ui-1_simple-add"></i> Add</button>
-                <!-- </div> -->
-              <!-- </div> -->
-         <!-- </div> -->
-        <!-- </div> -->
+            </p-table>
+        </div>
     </div>
+    <button class="btn btn-primary pull-right" style="margin-right:27px;font-size: 0.5rem;"
+        [routerLink]="['/keywords/add']">
+        <i class="now-ui-icons ui-1_simple-add"></i> Add</button>
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+</div>

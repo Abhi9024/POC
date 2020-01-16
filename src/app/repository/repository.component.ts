@@ -13,19 +13,21 @@ export class RepositoryComponent implements OnInit {
   repositories: Repository[];
   cols:any[];
   loading:boolean = true;
+  selectedRepositoryCols:any[];
   constructor(private service: RepositoryService,private router:Router) { }
   ngOnInit() {
     this.loading = true;
     this.getRepositories();
     this.cols=[
-      { field: 'logicalName', header: 'Logical Name' },
-      { field: 'findMethod', header: 'Find Method' },
-      { field: 'xpathQuery_PropertyName', header: 'XPathQuery' },
-      { field: 'propertyValue', header: 'Property Value' },
-      { field: 'tagName', header: 'Tag Name' },
-      { field: 'featureName', header: 'Feature Name' },
-      { field: 'actions', header: 'Actions' }
+      { label: 'Logical Name', value:{ field: 'logicalName', header: 'Logical Name' }},
+      { label: 'Find Method', value:{ field: 'findMethod', header: 'Find Method' }},
+      { label: 'XPathQuery', value:{ field: 'xpathQuery_PropertyName', header: 'XPathQuery' }},
+      { label: 'Property Value', value:{ field: 'propertyValue', header: 'Property Value' }},
+      { label: 'Tag Name', value:{ field: 'tagName', header: 'Tag Name' }},
+      { label: 'Feature Name', value:{ field: 'featureName', header: 'Feature Name' }},
+      { label: 'Actions', value:{ field: 'actions', header: 'Actions'}}
   ];
+  this.LoadRepositoryCols();
   }
 
   getRepositories(){
@@ -56,4 +58,10 @@ export class RepositoryComponent implements OnInit {
     this.router.navigate(['/repository/edit', id]);
   }
 
+  LoadRepositoryCols(){
+    this.selectedRepositoryCols = [];
+    this.cols.forEach(col => {
+      this.selectedRepositoryCols.push(col.value);
+    });
+  }
 }
