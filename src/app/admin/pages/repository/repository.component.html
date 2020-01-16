@@ -8,7 +8,7 @@
         <p-table #re [loading]="loading" [value]="repositories" sortMode="multiple" [columns]="cols" [paginator]="true" [rows]="10">
           <ng-template pTemplate="header" let-columns>
               <tr>
-                  <th *ngFor="let col of columns" [pSortableColumn]="col.field" pTooltip="{{col.header}}">
+                  <th *ngFor="let col of columns" pSortableColumn="col.field" pTooltip="col.header">
                       {{col.header}}
                       <p-sortIcon [field]="col.field"></p-sortIcon>
                   </th>

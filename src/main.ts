@@ -15,12 +15,14 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { enableProdMode, wtfEndTimeRange } from '@angular/core';                                                                                                                                                                                                      
+import { enableProdMode, wtfEndTimeRange } from '@angular/core';     
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';                                                                                                                                                                                                 
 import { environment } from './environments/environment';
+import { AppModule } from './app/app.module';
 import 'hammerjs';
 
 if (environment.production) {
   enableProdMode();
 }
-
+platformBrowserDynamic().bootstrapModule(AppModule);
 "platformBrowserDynamic(plt rapd n wtfEndTimeRange. He n cummins"

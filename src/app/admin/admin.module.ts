@@ -9,8 +9,8 @@ import { KeywordsComponent } from './pages/keywords/keywords.component';
 import { RepositoryComponent } from './pages/repository/repository.component';
 import { FeatureComponent } from './pages/feature/feature.component';
 import { RouterModule, Routes } from '@angular/router';
-import {MultiSelectModule} from 'primeng/multiselect';
-
+import { MultiSelectModule } from 'primeng/multiselect';
+import { TableModule } from 'primeng/table';
 
 
 const routes: Routes = [
@@ -35,7 +35,8 @@ const routes: Routes = [
     CommonModule,
     SharedModule,
     RouterModule.forChild(adminRoutes),
-    MultiSelectModule
+    MultiSelectModule,
+    TableModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

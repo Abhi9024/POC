@@ -22,7 +22,7 @@ import { MatSidenavModule } from '@angular/material';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { AdminComponent } from './admin';
 import { SharedModule } from './shared';
-
+import {TableModule } from 'primeng/table'
 
 @NgModule({
   imports: [
@@ -35,7 +35,8 @@ import { SharedModule } from './shared';
     ToastrModule.forRoot(),
     MatSidenavModule,
     MultiSelectModule,
-    SharedModule
+    SharedModule,
+    TableModule
   ],
   declarations: [
     AppComponent,
