@@ -3,14 +3,16 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Observable, of, throwError, pipe} from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { TestScript } from '../models/testscript.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestScriptsService {
-  public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string;
   
    constructor(private httpClient: HttpClient){
+    this.apiUrl = environment.APIURL;
    }
    
    getTestScripts():Observable<TestScript[]>{

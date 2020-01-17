@@ -5,17 +5,20 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { TestScript } from '../models/testscript.model';
 import { Repository } from '../models/repository.model';
 import { Keywords } from '../models/keyword.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KeywordService {
 
-  public apiUrl:string = "http://ec2-13-232-215-169.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string;
 
   
   
    constructor(private httpClient: HttpClient){
+     this.apiUrl = environment.APIURL;
+     //console.log(this.apiUrl);
    }
    
    getKeywords(): Observable<Keywords[]>{

@@ -4,16 +4,18 @@ import { Observable, of, throwError, pipe} from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { TestScript } from '../models/testscript.model';
 import { Repository } from '../models/repository.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RepositoryService {
 
-  public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/swagger/index.html";
+  public apiUrl:string;
 
   
    constructor(private httpClient: HttpClient){
+    this.apiUrl = environment.APIURL;
    }
    
    getRepositories():Observable<Repository[]>{

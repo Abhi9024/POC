@@ -6,14 +6,16 @@ import { TestScript } from '../models/testscript.model';
 import { TestController1 } from '../models/testcontroller1.model';
 import { TestController2 } from '../models/testcontrolller2.model';
 import { TestController3 } from '../models/testcontroller3.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestControllerService {
-  public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string;
   
    constructor(private httpClient: HttpClient){
+    this.apiUrl = environment.APIURL;
    }
    
    getAllController1():Observable<TestController1[]>{

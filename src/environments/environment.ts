@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  APIURL: "http://w1d01-qrweb01.mediconnect.net:8600/api"
 };
