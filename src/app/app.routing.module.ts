@@ -4,13 +4,19 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './admin';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'admin/repository',
+    redirectTo: 'login',
     pathMatch: 'full',
-  }, {
+   }, 
+   {
+    path: 'login',
+    component: AuthenticationComponent,
+   },
+  {
     path: '',
     component: AdminComponent,
     children: [

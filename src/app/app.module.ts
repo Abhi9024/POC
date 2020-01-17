@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -18,11 +18,19 @@ import { KeywordService } from './services/keyword.service';
 import { RepositoryService } from './services/repository.service';
 import { GlobalService } from './services/global.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog/confirmation-dialog.component';
-import { MatSidenavModule } from '@angular/material';
-import {MultiSelectModule} from 'primeng/multiselect';
+import {
+  MatSidenavModule, MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
+  MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule
+} from '@angular/material';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { AdminComponent } from './admin';
 import { SharedModule } from './shared';
-import {TableModule } from 'primeng/table'
+import { TableModule } from 'primeng/table'
+// import { AuthenticationModule } from './authentication';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { AlertComponent } from './directives';
+import { AlertService } from './services/alert.service';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   imports: [
@@ -36,15 +44,27 @@ import {TableModule } from 'primeng/table'
     MatSidenavModule,
     MultiSelectModule,
     SharedModule,
-    TableModule
+    TableModule,
+    ReactiveFormsModule,
+    MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
+    MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule
+
+    // AuthenticationModule
   ],
   declarations: [
     AppComponent,
     AdminComponent,
     ConfirmationDialogComponent,
-    
+    AuthenticationComponent,
+    AlertComponent
   ],
-  providers: [TestControllerService,TestScriptsService,KeywordService,RepositoryService, GlobalService],
+  providers: [TestControllerService,
+    TestScriptsService,
+    KeywordService,
+    RepositoryService,
+    GlobalService,
+    AuthenticationService,
+    AlertService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmationDialogComponent]
 })
