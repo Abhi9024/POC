@@ -18,7 +18,6 @@ export class KeywordService {
   
    constructor(private httpClient: HttpClient){
      this.apiUrl = environment.APIURL;
-     //console.log(this.apiUrl);
    }
    
    getKeywords(): Observable<Keywords[]>{
