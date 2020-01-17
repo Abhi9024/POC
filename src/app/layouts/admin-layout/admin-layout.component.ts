@@ -2,11 +2,11 @@ import {filter} from 'rxjs/operators';
 import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+// import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription ,  Observable } from 'rxjs';
 import PerfectScrollbar from 'perfect-scrollbar';
-import { GlobalService } from '../../services/global.service';
+// import { GlobalService } from '../../services/global.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -20,7 +20,8 @@ export class AdminLayoutComponent implements OnInit {
   private yScrollStack: number[] = [];
   showItems = false;
   constructor( public location: Location, private router: Router,
-                public globalService: GlobalService) {}
+                //public globalService: GlobalService
+                ) {}
 
   ngOnInit() {
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;

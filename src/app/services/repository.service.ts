@@ -9,13 +9,15 @@ import { Repository } from '../models/repository.model';
   providedIn: 'root'
 })
 export class RepositoryService {
-  public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/api";
+
+  public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/swagger/index.html";
+
   
    constructor(private httpClient: HttpClient){
    }
    
    getRepositories():Observable<Repository[]>{
-     return this.httpClient.get(this.apiUrl+'/Repository/GetAllRepository')
+     return this.httpClient.get(this.apiUrl+'/api/Repository/GetAllRepository')
                 .pipe(
                   map(res=>res as Repository[]),
                   catchError(this.errorHandle)
@@ -23,7 +25,7 @@ export class RepositoryService {
    }
 
    getRepository(id:number):Observable<Repository>{
-    return this.httpClient.get(this.apiUrl+'/Repository/GetRepositoryById/'+id)
+    return this.httpClient.get(this.apiUrl+'/api/Repository/GetRepositoryById/'+id)
     .pipe(
       map(res=>res as Repository),
       catchError(this.errorHandle)
@@ -31,7 +33,7 @@ export class RepositoryService {
    }
     
    addRepository(repo:Repository){
-       return this.httpClient.post(this.apiUrl+'/Repository/AddRepository',repo)
+       return this.httpClient.post(this.apiUrl+'/api/Repository/AddRepository',repo)
        .subscribe(
         data  => {
           console.log("POST Request is successful ", data);
@@ -43,7 +45,7 @@ export class RepositoryService {
     }
 
     updateRepository(id:number,repo:Repository){
-      return this.httpClient.put(this.apiUrl+'/Repository/UpdateRepository/'+id,repo)
+      return this.httpClient.put(this.apiUrl+'/api/Repository/UpdateRepository/'+id,repo)
       .subscribe(
         data  => {
           console.log("PUT Request is successful ", data);
@@ -55,7 +57,7 @@ export class RepositoryService {
     }
 
     deleteRepository(id:number){
-      return this.httpClient.delete(this.apiUrl+'/Repository/DeleteRepository/'+id)
+      return this.httpClient.delete(this.apiUrl+'/api/Repository/DeleteRepository/'+id)
       .subscribe(
         data  => {
           console.log("DELETE Request is successful ", data);

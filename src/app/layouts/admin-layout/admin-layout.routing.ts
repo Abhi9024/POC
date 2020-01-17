@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from '../../dashboard/dashboard.component';
+
 import { TableListComponent } from '../../table-list/table-list.component';
 import { Testcontroller3EditComponent } from '../../table-list/testcontroller3/testcontroller3-edit/testcontroller3-edit.component';
 import { Testcontroller3AddComponent } from '../../table-list/testcontroller3/testcontroller3-add/testcontroller3-add.component';
@@ -17,10 +17,10 @@ import { RepositoryAddComponent } from '../../repository/repository-add/reposito
 import { KeywordsComponent } from '../../keywords/keywords.component';
 import { KeywordsEditComponent } from '../../keywords/keywords-edit/keywords-edit.component';
 import { KeywordsAddComponent } from '../../keywords/keywords-add/keywords-add.component';
-import { IconsComponent } from '../../icons/icons.component';
+
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },
+    
     { path: 'table-list',     component: TableListComponent },
     { path: 'table-list/testcontroller3/edit/:id', component: Testcontroller3EditComponent},
     { path: 'table-list/testcontroller3/add', component: Testcontroller3AddComponent},
@@ -36,6 +36,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'keywords/add', component: KeywordsAddComponent},
     { path: 'repository',     component: RepositoryComponent },
     { path: 'repository/edit/:id', component: RepositoryEditComponent},
-    { path: 'repository/add', component: RepositoryAddComponent},
-    {path: 'icons', component: IconsComponent}
+    { path: 'repository/add', component: RepositoryAddComponent}
 ];
