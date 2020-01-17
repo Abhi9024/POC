@@ -11,7 +11,7 @@ import { TestController3 } from '../models/testcontroller3.model';
   providedIn: 'root'
 })
 export class TestControllerService {
-  public apiUrl:string = "http://ec2-3-6-40-41.ap-south-1.compute.amazonaws.com/api";
+  public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/api";
   
    constructor(private httpClient: HttpClient){
    }

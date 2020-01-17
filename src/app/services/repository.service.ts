@@ -9,7 +9,9 @@ import { Repository } from '../models/repository.model';
   providedIn: 'root'
 })
 export class RepositoryService {
+
   public apiUrl:string = "http://ec2-13-127-17-80.ap-south-1.compute.amazonaws.com/swagger/index.html";
+
   
    constructor(private httpClient: HttpClient){
    }
